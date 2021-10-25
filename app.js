@@ -3,7 +3,8 @@ const screens = document.querySelectorAll('.screen')
 const timeList = document.querySelector('#time-list')
 const timeEl = document.querySelector('#time')
 const board = document.querySelector('#board')
-const colors = ['#FFFF99','#FF6600','#CC3300','#CC0033','#CC3366','#993399','#000066','#66CC66']
+const buttonRestart = document.querySelector('#button-restart')
+const colors = ['#FFFF99','#FF6600','#CC3300','#CC0033','#CC3366','#993399','0101ff','#66CC66']
 let time = 0
 let score = 0
 
@@ -29,12 +30,16 @@ board.addEventListener('click', event => {
     }
 })
 
+buttonRestart.addEventListener('click', )
+
+
 
 function startGame(){
     setInterval(decreaseTime, 1000)
     createRandomCircle()
     setTime(time)
 }
+
 
 function decreaseTime(){
     if(time === 0 ){
@@ -62,7 +67,7 @@ function finishGame(){
 
 function createRandomCircle(){
     const circle = document.createElement('div')
-    const size = getRandomNumber(10, 60)
+    const size = getRandomNumber(20, 50)
     const{width, height} = board.getBoundingClientRect()
     const x = getRandomNumber (0, width - size)
     const y = getRandomNumber (0, height - size)
